@@ -51,7 +51,7 @@ RUN echo -e '#!/bin/sh\n\nexit 0\n' > /usr/local/sbin/ldconfig
 RUN chmod +x /usr/local/sbin/ldconfig
 
 RUN cd /root \
-    && git clone --depth 1 -b stable https://github.com/cossacklabs/themis
+    && git clone --depth 1 -b stable git@github.com:cossacklabs/themis.git
 RUN cd /root/themis \
     && make \
     && make install \
