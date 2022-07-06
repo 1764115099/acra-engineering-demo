@@ -32,6 +32,8 @@ LABEL org.label-schema.schema-version="1.0" \
 # Fix CVE-2019-5021
 RUN echo 'root:!' | chpasswd -e
 
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+
 RUN apk update
 
 RUN apk add --no-cache bash python3 py3-pip mariadb-dev mariadb-client

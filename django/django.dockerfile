@@ -34,6 +34,8 @@ RUN echo 'root:!' | chpasswd -e
 
 EXPOSE 8000
 
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+
 # Install packages
 RUN apk update
 

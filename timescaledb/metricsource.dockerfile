@@ -3,6 +3,8 @@ FROM alpine:3.15.0
 # Fix CVE-2019-5021
 RUN echo 'root:!' | chpasswd -e
 
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+
 RUN apk --update add bash postgresql postgresql-client \
     && rm -rf /var/cache/apk/*
 

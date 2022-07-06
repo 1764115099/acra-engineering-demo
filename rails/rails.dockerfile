@@ -36,6 +36,8 @@ EXPOSE 3000
 
 VOLUME /app.acrakeys
 
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+
 RUN apk add --no-cache \
   nodejs \
   postgresql-dev \
